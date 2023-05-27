@@ -1,0 +1,5 @@
+{
+    "amount": 1,
+    "validator_predicates": ["trinketlanterns:lanterns"],
+    "icon": "trinketlanterns:gui/slots/lantern"
+}

@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "trinketlanterns",
+	"version": "${version}",
+	"name": "Trinket Lanterns",
+	"description": "Allows lanterns to be placed on the hip for dynamic lighting.",
+	"authors": [
+		"AkashiiKun"
+	],
+	"contact": {
+		"sources": "https://github.com/AkashiiKun/TrinketLanterns"
+	},
+	"license": "LGPL-3.0-only",
+	"icon": "assets/trinketlanterns/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"io.github.akashiikun.trinketlanterns.TrinketLanternsMod"
+		],
+		"client": [
+          "io.github.akashiikun.trinketlanterns.TrinketLanternsModClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.14.19",
+		"minecraft": "~1.19",
+		"java": ">=17",
+		"fabric-api": "*",
+		"forgeconfigapiport": ">=4.2"
+	}
+}
