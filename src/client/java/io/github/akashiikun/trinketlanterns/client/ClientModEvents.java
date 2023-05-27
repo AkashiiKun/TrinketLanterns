@@ -5,7 +5,7 @@ import io.github.akashiikun.trinketlanterns.TrinketLanternsMod;
 import io.github.akashiikun.trinketlanterns.trinket.renderer.LanternRenderer;
 import net.fabricmc.fabric.api.client.model.ModelLoadingRegistry;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 
 public class ClientModEvents {
@@ -17,7 +17,7 @@ public class ClientModEvents {
 			String namespace = var.substring(0, var.indexOf(':'));
 			String item = var.substring(var.indexOf(':')+1);
 			if(FabricLoader.getInstance().isModLoaded(namespace)) {
-				TrinketRendererRegistry.registerRenderer(BuiltInRegistries.ITEM.get(new ResourceLocation(namespace, item)), LanternRenderer::new);
+				TrinketRendererRegistry.registerRenderer(Registry.ITEM.get(new ResourceLocation(namespace, item)), LanternRenderer::new);
 			}
 		}
 	}

@@ -3,7 +3,7 @@ plugins {
 	id 'maven-publish'
 }
 
-version = project.mod_version
+version ="${project.mod_version}+${project.minecraft_version}"
 group = project.maven_group
 
 base {
@@ -11,6 +11,7 @@ base {
 }
 
 repositories {
+	mavenCentral()
 	maven {
 		name = "TerraformersMC"
 		url = "https://maven.terraformersmc.com/"
@@ -64,12 +65,16 @@ dependencies {
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	
-	modImplementation "dev.emi:trinkets:${project.trinkets_version}"
-	modApi "fuzs.forgeconfigapiport:forgeconfigapiport-fabric:${project.forgeconfigapiport_version}"
+	modImplementation "maven.modrinth:trinkets:${project.trinkets_version}"
+	modApi "curse.maven:forge-config-api-port-fabric-547434:${project.forgeconfigapiport_version}"
 	modRuntimeOnly  "maven.modrinth:modmenu:${project.modmenu_version}"
 	modRuntimeOnly "maven.modrinth:radiant-gear:${project.radiantgear_version}"
 	modRuntimeOnly "maven.modrinth:lambdynamiclights:${project.lambdynamiclights_version}"
+
 	modRuntimeOnly("dev.lambdaurora:spruceui:${project.spruceui_version}")
+	implementation 'com.electronwill.night-config:core:3.6.3'
+	implementation 'com.electronwill.night-config:toml:3.6.3'
+	modRuntimeOnly "maven.modrinth:cardinal-components-api:${project.cardinalcomponents_version}"
 }
 
 processResources {
