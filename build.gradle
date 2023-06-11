@@ -44,6 +44,9 @@ repositories {
 			includeGroup "maven.modrinth"
 		}
 	}
+	flatDir{
+            dirs "$rootProject.projectDir/lib"
+        }
 }
 
 loom {
@@ -67,8 +70,8 @@ dependencies {
 	modImplementation "dev.emi:trinkets:${project.trinkets_version}"
 	modApi "fuzs.forgeconfigapiport:forgeconfigapiport-fabric:${project.forgeconfigapiport_version}"
 	modRuntimeOnly  "maven.modrinth:modmenu:${project.modmenu_version}"
-	modRuntimeOnly "maven.modrinth:radiant-gear:${project.radiantgear_version}"
-	modRuntimeOnly "maven.modrinth:lambdynamiclights:${project.lambdynamiclights_version}"
+	modRuntimeOnly "com.illusivesoulworks:radiantgear-fabric:${project.radiantgear_version}"
+	modRuntimeOnly "dev.lambdaurora:lambdynamiclights:${project.lambdynamiclights_version}"
 	modRuntimeOnly("dev.lambdaurora:spruceui:${project.spruceui_version}")
 }
 
